@@ -16,10 +16,9 @@
 
 plugins {
     id 'com.github.ben-manes.versions' version '0.46.0'
-    id 'com.autonomousapps.dependency-analysis' version '1.19.0'
+    id 'com.autonomousapps.dependency-analysis' version '1.19.0' // comment out if on JDK8
 }
 apply plugin: 'groovy'
-apply plugin: 'application'
 
 repositories {
     mavenCentral()

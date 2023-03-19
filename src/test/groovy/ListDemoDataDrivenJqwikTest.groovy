@@ -39,10 +39,9 @@ class ListDemoDataDrivenJqwikTest {
 
     class MutateAction implements Action.Independent<Tuple2<List, List>> {
         Arbitrary<Transformer<Tuple2<List, List>>> transformer() {
-            var indexValues = Arbitraries.integers().between(0, OPERATIONS.size() - 1)
-            indexValues.map(index ->
-                Transformer.mutate(OPERATIONS[index].key) { list1, list2 ->
-                    var op = OPERATIONS[index].value
+            Arbitraries.of(OPERATIONS).map(operation ->
+                Transformer.mutate(operation.key) { list1, list2 ->
+                    var op = operation.value
                     op(list1)
                     op(list2)
                     assert list1 == list2

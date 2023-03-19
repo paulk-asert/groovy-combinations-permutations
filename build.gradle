@@ -15,8 +15,8 @@
  */
 
 plugins {
-    id 'com.github.ben-manes.versions' version '0.44.0'
-    id 'com.autonomousapps.dependency-analysis' version '1.12.0'
+    id 'com.github.ben-manes.versions' version '0.46.0'
+    id 'com.autonomousapps.dependency-analysis' version '1.19.0'
 }
 apply plugin: 'groovy'
 apply plugin: 'application'
@@ -27,7 +27,7 @@ repositories {
 
 dependencies {
     testImplementation 'org.apache.groovy:groovy:4.0.10'
-    testImplementation 'org.apache.groovy:groovy-test-junit5:4.0.10'
+    runtimeOnly 'org.apache.groovy:groovy-test-junit5:4.0.10'
     testImplementation 'net.openhft:chronicle-test-framework:2.24ea3'
     testImplementation 'org.junit.jupiter:junit-jupiter-params:5.9.2'
     testImplementation 'org.spockframework:spock-core:2.3-groovy-4.0'
